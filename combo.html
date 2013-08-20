@@ -47,7 +47,7 @@
     <canvas id="cvs" width="600" height="250"></canvas>
         <script>
             var people = ['Rob','Luis'];
-			var BuildTime = [[18,15],[21,23],[28,21],[21,15]];
+	        var BuildTime = [[18,15],[21,23],[28,21],[21,15]];
             var bar = new RGraph.Bar('cvs', BuildTime)
                 .Set('labels', ['January','February','March','April'])
                 .Set('hmargin', 20)
@@ -98,15 +98,15 @@
 					vp.Set('colors', [ 'rgba(153, 208, 249,0.5)','rgba(255, 176, 176, 0.5)'])
 				}
                 
-                    vp.Set('gutter.left', coords[0])
-                    vp.Set('gutter.top', coords[1])
-                    vp.Set('gutter.right', bar.canvas.width - (coords[0] + coords[2]) )
-                    vp.Set('gutter.bottom', 25)
-                    vp.Set('labels.count', 0)
-                    vp.Set('tickmarks', false)
-                    vp.Set('tooltips', [people[j],people[j]])
-                    vp.Set('tooltips.event', 'mousemove')
-                    vp.Set('tooltips.effect', 'none')
+                vp.Set('gutter.left', coords[0])
+                vp.Set('gutter.top', coords[1])
+                vp.Set('gutter.right', bar.canvas.width - (coords[0] + coords[2]) )
+                vp.Set('gutter.bottom', 25)
+                vp.Set('labels.count', 0)
+                vp.Set('tickmarks', false)
+                vp.Set('tooltips', [people[j],people[j]])
+                vp.Set('tooltips.event', 'mousemove')
+                vp.Set('tooltips.effect', 'none')
                 vp.Set('strokestyle', 'rgba(0,0,0,0)')
                 vp.ondraw = DrawBottomAxis
                 vp.Draw();
@@ -142,7 +142,7 @@
             }
         </script>
         
-        <br />
+        <br/>
         
 </body>
 </html>
