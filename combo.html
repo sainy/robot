@@ -47,13 +47,13 @@
     <canvas id="cvs" width="600" height="250"></canvas>
         <script>
             var people = ['Rob','Luis'];
-	        var BuildTime = [[18,15],[21,23],[28,21],[21,15]];
+            var Num = [[18,15],[21,23],[28,21],[21,15]];
             var bar = new RGraph.Bar('cvs', BuildTime)
                 .Set('labels', ['January','February','March','April'])
                 .Set('hmargin', 20)
                 .Set('hmargin.grouped', 2)
-				.Set('labels.above', true)
-				.Set('labels.above.decimals', 1)
+                .Set('labels.above', true)
+                .Set('labels.above.decimals', 1)
                 .Set('highlight.fill', 'red')
                 .Set('key', ['This year','Last year'])
                 .Set('key.colors', ['red','yellow'])
@@ -82,21 +82,19 @@
                 }
                 var coords = bar.coords[i];
                 var data = []
-				var max;
-				if (i % 2 == 0)
-				{
-					data = [0,100];
-					max = 100;
-					var vp = new RGraph.VProgress('cvs',0,100,[0,100])
-					vp.Set('colors', [ 'yellow','#B2C8B2'])
-				}
-				else
-				{
-					max = BuildTime[parseInt(i/2)][1];
-					data = [8,max-8];
-					var vp = new RGraph.VProgress('cvs',0,max,data)
-					vp.Set('colors', [ 'rgba(153, 208, 249,0.5)','rgba(255, 176, 176, 0.5)'])
-				}
+                var max;
+                if (i % 2 == 0)
+                {
+                    var vp = new RGraph.VProgress('cvs',0,100,[0,100])
+                    vp.Set('colors', [ 'yellow','#B2C8B2'])
+                }
+                else
+                {
+                    max = Num[parseInt(i/2)][1];
+                    data = [8,max-8];
+                    var vp = new RGraph.VProgress('cvs',0,max,data)
+                    vp.Set('colors', [ 'rgba(153, 208, 249,0.5)','rgba(255, 176, 176, 0.5)'])
+                }
                 
                 vp.Set('gutter.left', coords[0])
                 vp.Set('gutter.top', coords[1])
