@@ -102,9 +102,11 @@ class Joint:
         self.doAction()
 
     def printInfo(self):
-        print self.name+":"
-        print("%s:%.2f"%("length",self.length))
-        print self.position
+        if self.down_joint:
+            print("JointName:%s,  Next:%s,  ControlLength:%.2f" %(self.name,self.down_joint[0].name,self.length))
+        else:
+            print("JointName:%s,  Next:None, COntrolLength:0.0 "%self.name)
+        print("Position:(%.2f,%.2f,%.2f,%.2f,%.2f,%.2f)\n"%(self.position["pos_x"],self.position["pos_y"],self.position["pos_z"],self.position["alpha"],self.position["beta"],self.position["gamma"]))
         if self.down_joint:
             for joint in self.down_joint:
                 joint.printInfo()

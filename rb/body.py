@@ -100,7 +100,7 @@ class Body:
     Left_leg = LeftLeg()
     Right_leg = RightLeg()
     head = Joint("The head top",init_pos={"x":0,"y":0,"z":175})
-    neck = Joint("body's neck",init_pos={"x":0,"y":0,"z":150},dw_joint=[Left_hand.l_hand,Right_hand.r_hand,head])
+    neck = Joint("body's neck",init_pos={"x":0,"y":0,"z":150},dw_joint=[head,Left_hand.l_hand,Right_hand.r_hand])
     back = Joint("the back of body",init_pos={"x":0,"y":0,"z":125},dw_joint=[neck])
     waist = Joint("the waist of body",init_pos={"x":0,"y":0,"z":110},dw_joint=[back,Left_leg.l_thigh,Right_leg.r_thigh])
 
@@ -110,14 +110,11 @@ class Body:
         Store.register(body)
 
     def printInfo(self):
-        self.head.printInfo()
-        self.neck.printInfo()
-        self.back.printInfo()
         self.waist.printInfo()
 
 if __name__=="__main__":
     #lefthand = LeftHand()
     #lefthand.printInfo()
     body = Body()
-    #body.printInfo()
+    body.printInfo()
     #print Store.key_points
