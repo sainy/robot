@@ -1,5 +1,3 @@
-
-
 class Register:
     key_points = []
 

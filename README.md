@@ -1,3 +1,4 @@
 robot
 =====
-Use RGraph library to do the drawing work in html.(temporary project)
+This project used to show an intelligent robot.
+
