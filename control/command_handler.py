@@ -7,6 +7,9 @@ class cmdHandler:
     def compare(self):
         pass
 
+    def Test(self):
+        pass
+
     def GotChange(self,change):
         pass
 
