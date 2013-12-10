@@ -11,4 +11,5 @@ class cmdHandler:
         pass
 
     def TT(self):
-        print "asdf"
+        #print "asdf"
+        pass
