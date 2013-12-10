@@ -6,3 +6,7 @@ class cmdHandler:
     
     def compare(self):
         pass
+
+    def Test(self):
+        pass
+  
