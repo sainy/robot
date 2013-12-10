@@ -12,5 +12,4 @@ class cmdHandler:
 
     def TT(self):
         pass
-        #fa;sdjf
 
