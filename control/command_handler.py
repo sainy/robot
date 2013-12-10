@@ -10,6 +10,4 @@ class cmdHandler:
     def Test(self):
         pass
 
-    def TT(self):
-        pass
 
