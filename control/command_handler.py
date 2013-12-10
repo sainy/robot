@@ -13,4 +13,5 @@ class cmdHandler:
     def GotChange(self,change):
         pass
 
-
+    def TT(self):
+        pass
