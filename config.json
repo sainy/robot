@@ -1,0 +1,14 @@
+{
+  "define":[
+    {
+      "name": "Unit Test",
+      "size": "small",
+      "os"  : "win",
+      "need_bin": true,
+      "need_env": true,
+      "cmd" : "call runalltest.bat",
+      "result_path": "develop/result"
+    }
+  ]
+
+}
