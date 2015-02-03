@@ -1,0 +1,9 @@
+{
+    "name":"unit test",
+    "size":"small",
+    "os":"win",
+    "need_binary":true,
+    "need_environment":true,
+    "result_path":"${WORK_DIR}/unit_test",
+    "command":"call ${WORK_DIR}/develop/tools/bin/CI/unit_test/run_unit.bat"
+}
