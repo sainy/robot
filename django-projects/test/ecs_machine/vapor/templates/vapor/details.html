@@ -1,0 +1,19 @@
+{% if instance_list %}
+  <table id="commitinfo" rules="all" style="border-style:solid;border-width:1px 1px 1px 1px;font-family:Times New Roman;font-size:12pt;"><col width='400'><col width='500'>
+    <tr align="center" bgcolor="#ddd" height="40px">
+      <th> Name - Provider ID </th>
+      <th> Account </th>
+      <th> IP Address </th>
+      <th> Description </th>
+      <th> Tag </th>
+      {% for instance in instance_list %}
+      <tr align = 'center' height="38px">
+        <td>{{ instance.Name }} - {{instance.InstanceId}}</td>
+        <td>{{ instance.Account }} </td>
+        <td>{{ instance.IpAddress }} </td>
+        <td>{{ instance.Description }} </td>
+        <td>{{ instance.Tag }} </td>
+      {% endfor %}
+{% else %}
+  <p>No instance are available.</p>
+{% endif %}
