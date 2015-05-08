@@ -33,16 +33,6 @@ class Migration(migrations.Migration):
             bases=(models.Model,),
         ),
         migrations.CreateModel(
-            name='DeployShip',
-            fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('deploy', models.ForeignKey(to='deploy.Deploys')),
-            ],
-            options={
-            },
-            bases=(models.Model,),
-        ),
-        migrations.CreateModel(
             name='Instances',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
@@ -52,6 +42,7 @@ class Migration(migrations.Migration):
                 ('Inst_Ip', models.CharField(max_length=20)),
                 ('Inst_Fqdn', models.CharField(max_length=50)),
                 ('Inst_Cmd', models.CharField(max_length=200)),
+                ('sheet', models.ForeignKey(to='deploy.DeploySheet')),
             ],
             options={
             },
@@ -63,51 +54,22 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('Attr_Name', models.CharField(max_length=50)),
                 ('Attr_Value', models.CharField(max_length=200)),
+                ('sheet', models.ForeignKey(to='deploy.DeploySheet')),
             ],
             options={
             },
             bases=(models.Model,),
         ),
         migrations.AddField(
-            model_name='deployship',
-            name='instance',
+            model_name='deploys',
+            name='Instance',
             field=models.ForeignKey(to='deploy.Instances'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='deployship',
-            name='sheet',
-            field=models.ForeignKey(to='deploy.DeploySheet'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='deployship',
-            name='variable',
-            field=models.ForeignKey(to='deploy.Variables'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='deploysheet',
-            name='deploys',
-            field=models.ManyToManyField(to='deploy.Deploys', through='deploy.DeployShip'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='deploysheet',
-            name='instances',
-            field=models.ManyToManyField(to='deploy.Instances', through='deploy.DeployShip'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='deploysheet',
-            name='varibles',
-            field=models.ManyToManyField(to='deploy.Variables', through='deploy.DeployShip'),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name='deploys',
-            name='Instance',
-            field=models.ForeignKey(to='deploy.Instances'),
+            name='sheet',
+            field=models.ForeignKey(to='deploy.DeploySheet'),
             preserve_default=True,
         ),
     ]
