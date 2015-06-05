@@ -1,0 +1,40 @@
+{% block doctype %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% endblock %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  {% block head %}
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>{{ pageTitle|default:"AutoCAD CI Machine Manage" }}</title>
+  {% load staticfiles%}
+  <script src="{% static 'deploy/jquery.min.js' %}"></script>
+  <!--link rel="shortcut icon" href="./favicon.ico" -->
+  <link href="{% static 'deploy/bootstrap.min.css' %}" rel="stylesheet">
+  <script src="{% static 'deploy/bootstrap.min.js' %}"></script>
+  <link href="{% static 'deploy/site.css' %}" rel="stylesheet">
+  {% endblock head%}
+</head>
+
+<body class="">
+  {% block header %}
+  <div class="navbar navbar-inverse">
+    <div class="navbar-inner">
+      <button type="button" class="navbar-toggle" toggle="collapse" target="#navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">AutoCAD CI Vapor</a>
+    </div>
+  </div>
+  {% endblock header %}
+  <hr/>
+
+  {% block content %}
+  {% endblock content %}
+
+</body>
+</html>
+

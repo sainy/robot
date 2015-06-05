@@ -1,0 +1,54 @@
+{% extends "deploy/base_view.html" %}
+
+{% block new_item %}
+  {% if selected_sheet_name %}
+  <form method="post" action="{% url 'deploy:variable' selected_sheet_name %}">
+  {% else %}
+  <form method="post" action="#">
+  {% endif %}
+    {% csrf_token %}
+    <input type="submit" value="New Item" class="btn btn-primary"/>
+    <input type="hidden" name="new_item" value="True" />
+  </form>
+{% endblock new_item %}
+
+
+{% block detail_table %}
+  {% if selected_sheet_name %}
+  <table class="table table-striped table-hover">
+    <caption class="text-center text-info">
+      <b>{{ selected_sheet_name }}</b>
+    </caption>
+    <tr class="one">
+      <th>#</th>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Actions</th>
+    </tr>
+    {% for varible in selected_variabless%}
+    <tr>
+      <td><b>{{ forloop.counter}}</b></td>
+      <td>{{ varible.Attr_Name }}</td>
+      <td>{{ varible.Attr_Value }}</td>
+      <td width="10%">
+        <a class="btn btn-xs"><span class="glyphicon glyphicon-edit"></span></a>
+        <a class="btn btn-xs"><span class="glyphicon glyphicon-check"></span></a>
+        <a class="btn btn-xs"><span class="glyphicon glyphicon-trash"></span></a>
+      </td>
+    </tr>
+    {% endfor %}
+    {% if new_item %}
+    <tr>
+      <td><b>+1</b></td>
+      <td><input type="text" class="form-control" name="ip_addr" placeholder="Name"></input></td>
+      <td><input type="text" class="form-control" name="ip_addr" placeholder="Value"></input></td>
+      <td width="10%">
+        <a class="btn btn-xs"><span class="glyphicon glyphicon-edit"></span></a>
+        <a class="btn btn-xs"><span class="glyphicon glyphicon-check"></span></a>
+        <a class="btn btn-xs"><span class="glyphicon glyphicon-trash"></span></a>
+      </td>
+    </tr>
+    {% endif %}
+  </table>
+  {% endif %}
+{% endblock detail_table%}

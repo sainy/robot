@@ -1,0 +1,75 @@
+{% extends "deploy/basic.html" %}
+
+{% block content %}
+
+<div class="col-sm-offset-7 row">
+  <div class="dropdown col-md-2 btn-group" role="group">
+    <button class="btn btn-default dropdown-toggle" aria-expanded="false" type="button" data-toggle="dropdown">
+      Dropdown
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      {% if sheet_names %}
+        {% for name in sheet_names %}
+          <li><a role="menuitem" href="{% url 'deploy:instance' name %}">{{name}}</a></li>
+        {% endfor%}
+        <li class="divider"></li>
+      {% endif %}
+      <li>
+        <a role="menuitem" href="#">Add New</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-3">
+    {% block new_item %}
+    {% if selected_sheet_name %}
+    <form method="post" action="{% url 'deploy:addItem' %}">
+    {% else %}
+    <form method="post" action="#">
+    {% endif %}
+      {% csrf_token %}
+      <input type="submit" value="New Item" class="btn btn-primary"/>
+      <input type="hidden" name="sheet_name" value="acadci_staging_sha" />
+    </form>
+    {% endblock new_item %}
+  </div>
+  <div class="input-group col-md-5">
+    <input type="text" class="form-control" placeholder="Search">
+    <span class="input-group-addon btn btn-default">
+      <span class="glyphicon glyphicon-search"></span>
+    </span>
+  </div>
+</div>
+<br/>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="col-sm-2">
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+          <li class="nav-header"><b>Deploy Sheet</b></li>
+          {% if selected_sheet_name %}
+          <li class="active"><a href="{% url 'deploy:instance' selected_sheet_name %}">Instances</a></li>
+          <li><a href="{% url 'deploy:deploy' selected_sheet_name %}">Deploy</a></li>
+          <li><a href="{% url 'deploy:variable' selected_sheet_name %}">Variables</a></li>
+          {% else %}
+          <li class="active"><a href="#">Instances</a></li>
+          <li><a href="#">Deploy</a></li>
+          <li><a href="#">Variables</a></li>
+          {% endif %}
+        </ul>
+      </div><!--/.well -->
+    </div>
+
+    <div class="col-sm-10">
+      <div class="col-sm-offset-0.5">
+      {% block detail_table %}
+      
+      {% endblock detail_table %}
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

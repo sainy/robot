@@ -1,0 +1,7 @@
+<h1>This is the index page to query ecs machine</h1>
+
+<form action="{% url 'vapor:query' %}" method="post">
+  {% csrf_token %}
+  <input type="text" name="ecs_api_url" id="1" value="test" />
+  <input type="submit" value="Query" />
+</form>

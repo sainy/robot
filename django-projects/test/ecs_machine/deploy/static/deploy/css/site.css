@@ -1,0 +1,15 @@
+.table {
+    margin-bottom: 5px;
+}
+
+.table, th {
+    text-align:center;
+}
+
+.td {
+    table-layout:fixed;
+}
+
+nav {
+    margin-left: 10px;
+}
