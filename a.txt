@@ -1,0 +1,18 @@
+2014/11/05 01:51:59 ERROR 3 (0x00000003) Scanning Extra Directory E:\CI\build\main\acadbuildres\global\Debug64\bin\apih_bin\BaseFiles\
+The system cannot find the path specified.
+  *EXTRA Dir        -1  E:\CI\build\main\acadbuildres\global\Debug64\bin\apih_bin\DSMComponents\
+2014/11/05 01:51:59 ERROR 3 (0x00000003) Scanning Extra Directory E:\CI\build\main\acadbuildres\global\Debug64\bin\apih_bin\DSMComponents\
+The system cannot find the path specified.
+  *EXTRA Dir        -1  E:\CI\build\main\acadbuildres\global\Debug64\bin\apih_bin\dwgs\
+2014/11/05 01:51:59 ERROR 3 (0x00000003) Scanning Extra Directory E:\CI\build\main\acadbuildres\global\Debug64\bin\apih_bin\dwgs\
+The system cannot find the path specified.
+2014/11/05 01:51:59 ERROR 3 (0x00000003) Scanning Extra Directory E:\CI\build\main\acadbuildres\global\Debug64\bin\apih_bin\eTransmit\
+The system cannot find the path specified.
+2014/11/05 01:51:59 ERROR 3 (0x00000003) Scanning Extra Directory E:\CI\build\main\acadbuildres\global\Debug64\bin\apih_bin\fonts\
+The system cannot find the path specified.
+1  E:\CI\source\main\develop\global\src\coreapps\AcExperience\MC3\Release\Mac64_Sandbox\MC3Framework.framework\Versions\A\Resources\zh-Hans.lproj\
+       Newer             4332  Localizable.strings
+2014/11/05 02:04:40 ERROR 5 (0x00000005) Copying File E:\CI\source\main\develop\global\src\coreapps\AcExperience\MC3\Release\Mac64_Sandbox\MC3Framework.framework\Versions\A\Resources\zh-Hans.lproj\Localizable.strings
+Access is denied.
+2014/11/05 02:04:40 ERROR 5 (0x00000005) Copying File E:\CI\source\main\develop\global\src\coreapps\AcExperience\MC3\Release\Mac64_Sandbox\MC3Framework.framework\Versions\A\Resources\zh-Hans.lproj\UnexpectedCloseDialog.nib\designable.nib
+Access is denied.
